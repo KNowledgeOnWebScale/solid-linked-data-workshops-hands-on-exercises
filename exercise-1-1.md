@@ -20,7 +20,4 @@ You find information about a person below.
 - Member of this organization
   - Name: New U Technologies
   - Website: https://new-u.tech
-
-## Solution
-
-You find a solution in `solution.jsonld`.
+  
