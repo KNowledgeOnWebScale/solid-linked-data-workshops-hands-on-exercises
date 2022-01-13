@@ -2,6 +2,7 @@
 
 Create YARRRML rules to convert the person and organization data below into RDF.
 Do not forget to link the people to their organizations through your rules.
+Use the FOAF vocabulary for modeling, as you have done for exercise 1.1.
 
 Tip: test your YARRRML rules via [Matey](https://rml.io/yarrrml/matey/).
 
