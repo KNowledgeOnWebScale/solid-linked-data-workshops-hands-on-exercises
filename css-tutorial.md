@@ -51,9 +51,9 @@ some of which we will cover later.
 More information on the server can be found in the [repository](https://github.com/solid/community-server).
 
 ### Getting started
-While the server can be installed as a global application,
-we will be working directly from the source in this tutorial.
-This can be done by cloning the server from the git repository and installing it:
+While you can install the server as a global application,
+we work directly from the source in this tutorial.
+You do this by cloning the server from the git repository and installing it:
 
 ```shell
 git clone git@github.com:solid/community-server.git
@@ -61,22 +61,22 @@ cd community-server
 npm install
 ```
 
-After that the server can be started by running the following command from the same folder:
+After that you start the server by running the following command from the same folder:
 ```shell
 npm start
 ```
 
-This will start your own Solid server, which can be seen at http://localhost:3000/ .
+This starts your own Solid server, which you then see at http://localhost:3000/.
 
 ### Example Solid HTTP requests
 All interactions with the server happen through HTTP requests,
 which each HTTP method having its own use.
 Below are some common examples.
-These can be run using `curl` on the command line,
-or by manually constructing the queries in a HTTP client such as [Hoppscotch](https://hoppscotch.io/).
+You run these using `curl` on the command line,
+or by manually constructing the queries in an HTTP client such as [Hoppscotch](https://hoppscotch.io/).
 
 #### GETting resources
-GET can be used to request resources:
+GET is used to request resources:
 
 ```shell
 curl http://localhost:3000/
@@ -108,13 +108,13 @@ curl -H "Accept: application/n-triples"  http://localhost:3000/
 <http://localhost:3000/> <http://www.w3.org/ns/auth/acl#accessControl> <http://localhost:3000/.acl> .
 ```
 
-And in case the HTML representation is needed as seen in the previous step,
-an `text/html` Accept header can be sent along.
+And in case the HTML representation is needed, as seen in the previous step,
+you can send an `text/html` Accept header along.
 
 #### POSTing new resources
-New resources can be created using POST requests.
-We will use the `-v` flag to see the response headers
-since the Location header returns the location of this new resource.
+Post is used to create new resources.
+We use the `-v` flag in the examples here to see the response headers,
+since the Location header returns the URL of this new resource.
 
 ```shell
 curl -v -X POST -H "Content-Type: text/plain" -d "abc" http://localhost:3000/
@@ -124,7 +124,7 @@ curl -v -X POST -H "Content-Type: text/plain" -d "abc" http://localhost:3000/
 Location: http://localhost:3000/823df3de-5766-4d2a-97d7-2a79a7093c57
 ```
 
-The Slug header can also be used to recommend a name for the server to use:
+The Slug header is used to recommend a name for the resource to the server:
 
 ```shell
 curl -v -X POST -H "Slug: custom" -H "Content-Type: text/plain" -d "abc" http://localhost:3000/
@@ -133,30 +133,30 @@ curl -v -X POST -H "Slug: custom" -H "Content-Type: text/plain" -d "abc" http://
 Location: http://localhost:3000/custom
 ```
 
-This new resource can then be seen at http://localhost:3000/customName .
+You can see this resource at http://localhost:3000/customName.
 Note that the Slug header is a suggestion,
 servers are not required to use it.
 
 #### PUTting new data
 PUT is used to write data to a specific location.
-In case that location already exists the data there will be overwritten.
-If not, a new resource will be created.
+In case that location already exists, the data there is overwritten.
+If not, a new resource is created.
 
 ```shell
 curl -X PUT -H "Content-Type: text/turtle" -d "<ex:s> <ex:p> <ex:o>." http://localhost:3000/a/b/c
 ```
-Doing a GET to http://localhost:3000/a/b/c will show that the resource is created.
+Doing a GET to http://localhost:3000/a/b/c shows that the resource was created.
 Note that this single request also created the intermediate containers 
-http://localhost:3000/a/ and http://localhost:3000/a/b/ , which can also be accessed now.
+http://localhost:3000/a/ and http://localhost:3000/a/b/, which you can also access now.
 
-As mentioned, we can also overwrite the data at a location
+As mentioned, you can also overwrite the data at a location:
 ```shell
 curl -X PUT -H "Content-Type: text/turtle" -d "<ex:s2> <ex:p2> <ex:o2>." http://localhost:3000/a/b/c
 ```
-This command will completely replace the data found at http://localhost:3000/a/b/c .
+This command completely replaces the data found at http://localhost:3000/a/b/c.
 
 #### PATCHing resources
-PATCH can be used to update resources.
+PATCH is used to update resources.
 This is useful if you do not want to completely overwrite a resource with a PUT
 and only want to make a smaller change.
 
@@ -168,22 +168,25 @@ Fortunately we created an RDF resource in the previous step that we can now upda
 curl -X PATCH -H "Content-Type: application/sparql-update" -d "INSERT DATA { <ex:s3> <ex:p3> <ex:o3> }" http://localhost:3000/a/b/c
 ```
 The above command will append the triple `<ex:s3> <ex:p3> <ex:o3>.` to the RDF resource,
-which can be verified by GETting http://localhost:3000/a/b/c .
+which can be verified by GETting http://localhost:3000/a/b/c.
+
+[N3 Patch](https://solid.github.io/specification/protocol#n3-patch) was recently added as a requirement
+to the Solid specification so this will be added to CSS in the near future.
 
 #### DELETE a resource
-Finally, DELETE can be used to remove resources.
+Finally, DELETE is used to remove resources.
 
 ```shell
 curl -X DELETE http://localhost:3000/a/b/c
 ```
 
-This will completely remove the resource from the server.
+This completely removes the resource from the server.
 The parent containers will remain,
 so http://localhost:3000/a/ and http://localhost:3000/a/b/ still exist.
 
 ### Using a different configuration
-The server we have been using so far has been running with a memory backend,
-which means all data will be lost when the server is stopped.
+The server we used so far has been running with a memory backend,
+which means all data is lost when the server is stopped.
 There are many ways to configure CSS and several default configurations are provided that can be used.
 When starting the server with `npm start` the server will default to a memory-based configuration.
 
@@ -194,7 +197,7 @@ then start it again with the following command from the source folder:
 ```shell
 npm start -- -c config/file.json -f ../.data
 ```
-The above command will start the server with the `file.json` config,
+The above command starts the server with the `file.json` config,
 one of the available [default configurations](https://github.com/solid/community-server/tree/main/config),
 which starts the server with a file backend.
 The `-f ../.data` parameter tells the server we want all data to be stored in that folder. 
@@ -206,16 +209,15 @@ CSS (and most other Solid servers) make use of
 [Web Access Control (WAC)](https://solid.github.io/web-access-control-spec/)
 to restrict access to resources.
 
-First we will set up the server after which we will cover the basics of this authentication scheme.
+First we set up the server after which we cover the basics of this authentication scheme.
 
 ### Setup
 With the newly configured server,
 if you browse to http://localhost:3000/ you will now see a setup screen.
 This setup allows you already set some initial permissions on the server.
 
-For this tutorial we will choose the `Sign up for an account` option.
-Choose the options to create a new WebID in the root,
-more on what this means later.
+For this tutorial we take the `Sign up for an account` option.
+Choose the options to create a new WebID in the root.
 Make sure you don't forget the email/password combination that you choose.
 The response page will show some extra information about the setup result.
 
@@ -223,10 +225,11 @@ The response page will show some extra information about the setup result.
 In the previous step the server created several resources for you,
 including a profile document with a WebID.
 A [WebID](https://dvcs.w3.org/hg/WebID/raw-file/tip/spec/identity-respec.html)
-is a way to identify yourself on the Web.
-We will make use of this a bit later in this tutorial.
-After setup, you can find your profile resource at http://localhost:3000/profile/card ,
-with your WebID being http://localhost:3000/profile/card#me .
+is a way to identify yourself on the Web
+and is a core concept when authenticating with Solid.
+We make use of this a bit later in this tutorial.
+After setup, you can find your profile resource at http://localhost:3000/profile/card,
+with your WebID being http://localhost:3000/profile/card#me.
 
 In case that you want multiple users to have their WebID on your server,
 you could have chosen to create your WebID in a specific namespace during setup.
@@ -235,16 +238,17 @@ you could have chosen to create your WebID in a specific namespace during setup.
 Your WebID needs to be publicly accessible, so you can be identified,
 but your other resources can have restricted access.
 For example, when trying to access the profile container http://localhost:3000/profile/
-you will receive a `403: Not Logged In` error.
+you receive a `403: Not Logged In` error.
 
-We will cover how to correctly authenticate in the next chapter,
+We will cover how to correctly authenticate in the next section,
 but we can already have a look now why this is the case.
 Since the server is now running in file mode,
 we can cheat and have a look at the files on disk to see what exactly is causing this.
 
-WAC makes use of Access Control List (ACL) resources to determine what is allowed.
-In general, these resources have an `.acl` extension.
-The ACL resource that determines access to the root container would be `http://localhost:3000/.acl`.
+WAC uses Access Control List (ACL) resources to determine what is allowed.
+In general, these resources have an `.acl` extension,
+but you can always find the corresponding ACL in the response header when GETting a resource.
+The ACL resource that determines access to the root container is `http://localhost:3000/.acl`.
 This means that we can find our root ACL resource by looking for the `.data/.acl` file.
 This file has the following contents:
 
@@ -305,7 +309,7 @@ thereby making the profile fully readable for everyone.
 
 #### Access Control Policies
 While this is not covered in this tutorial,
-it should already being noted that research is being done
+it should already be noted that research is being done
 into having a new authentication mechanism for Solid servers called
 [Access Control Policies (ACP)](https://github.com/solid/authorization-panel/blob/main/proposals/acp/index.md).
 This is not supported yet in CSS but is planned as a future alternative.
@@ -317,8 +321,8 @@ Solid makes use of OpenID and OAuth to support this.
 All information related to this can be found in the
 [Solid-OIDC specification](https://solid.github.io/solid-oidc/).
 
-First we will show an example of how authentication works,
-after we will provide an explanation of why exactly this works.
+First we show an example of how authentication works,
+after which we provide an explanation of why exactly this works.
 
 ### Authentication client
 The de facto solution for authenticating with a Solid server is the 
@@ -331,24 +335,24 @@ npm install
 ```
 
 This library contains both implementations for authenticating using Node.js and JavaScript in the browser.
-Besides that it also has several example client implementations.
-We will use one of these as an example.
+Besides that, it also has several example client implementations.
+We use one of these example implementations here.
 After installation is complete, use the following commands to install and start this client:
 ```shell
 cd packages/browser/examples/demoClientApp
 npm install
 npm start
 ```
-This should automatically open a new tab in your browser at http://localhost:3001/.
+This automatically opens a new tab in your browser at http://localhost:3001/.
 
 ### Accessing a protected resource
 In the authentication client, fill in the address of your running CSS instance (`http://localhost:3000/`)
 in the `Identity Provider` field and press `Log In`.
-This will redirect you to your CSS instance that will ask for your email and password combination.
-After logging in there you will be redirected back to the authentication client
-which will now show that you will be identified with your WebID.
+This redirects you to your CSS instance that asks for your email and password combination.
+After logging in there you are redirected back to the authentication client
+which shows that you will be identified with your WebID.
 
-You can now enter http://localhost:3000/profile/ in the field below that and press fetch
+You can now enter http://localhost:3000/profile/ in the field lower on the page and press fetch
 to access the resource that was previously restricted.
 
 ### Authentication summary
@@ -405,15 +409,15 @@ to have a memory backend or a file backend, but many more options are available.
 ### Components.js
 When we wanted CSS to store data on disk,
 we told it to use the configuration
-[config/file.json](https://github.com/solid/community-server/blob/main/config/file.json)
+[config/file.json](https://github.com/solid/community-server/blob/main/config/file.json),
 which you can find in the CSS source folder.
 This is a [JSON-LD](https://json-ld.org/) file that mostly imports many other JSON-LD documents.
 If you explored all the imports you would find out that these documents
 link all classes together with their parameters.
 This is done using [Components.js](https://github.com/LinkedSoftwareDependencies/Components.js),
 a semantic dependency injection framework.
-In this tutorial we will only cover a few basics of how CSS uses this framework,
-more detailed information can be found in the Components.js
+In this tutorial we only cover a few basics of how CSS uses this framework.
+More detailed information can be found in the Components.js
 [documentation](http://componentsjs.readthedocs.io/).
 
 ### Customizing imports
@@ -422,7 +426,7 @@ all refer to files found in subfolders of the `config` folder.
 These folders and files have been structured in a such a way
 that every import line corresponds to a specific feature that can be changed.
 
-For example, if you look the config that is used
+For example, if you look at the config that is used
 when running the server with `npm start` (`config/default.json`)
 you can see it has the following import:
 ```
@@ -433,7 +437,7 @@ On the other hand, `config/file.json` has the following import instead:
 "files-scs:config/storage/backend/file.json"
 ```
 Simply by changing that import in a configuration you can tell it what backend to use.
-Every subfolder of `config` has a `README` document explaining what the available options are.
+Every subfolder of `config` has a `README.md` document explaining what the available options are.
 For example, if you have a look at
 [config/storage/README.md](https://github.com/solid/community-server/tree/main/config/storage)
 you can see that it is also possible to have a SPARQL backend by changing the import to use `sparql.json`.
@@ -462,9 +466,9 @@ Now start the server with the new server as follows:
 cd community-server
 npm start -- -c ../unsafe.json -f ../.data
 ```
-This will start the server again on http://localhost:3000/ .
+This starts the server again on http://localhost:3000/.
 If you now browse to http://localhost:3000/profile/
-you will be able to see the contents of that container,
+you can see the contents of that container,
 while this was hidden when running our previous instance,
 showing that authentication no longer checks requests.
 Note also that all data is still there even though 
@@ -474,10 +478,10 @@ the server was stopped and restarted with a different configuration.
 Sometimes more customization is needed than what changing the imports allow.
 In those cases it will be necessary to create a configuration that is a combination
 of specific imports and custom Components.js.
-This requires more knowledge about the server and Components.js so we will not go deeper into this,
-but an example is the
+This requires more knowledge about the server and Components.js so we will not go deeper into this.
+An example is the
 [config/sparql-file-storage.json](https://github.com/solid/community-server/blob/main/config/sparql-file-storage.json)
 configuration, which uses a file backend for internal data such as accounts,
 and a SPARQL backend for all standard Solid data.
-This configuration is missing a few imports,
+This configuration removed a few imports,
 and instead replaced their functionality by the objects found in the body of that configuration.
