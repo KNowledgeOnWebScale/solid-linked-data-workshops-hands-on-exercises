@@ -1,4 +1,4 @@
-# Exercise 3.1
+# Exercise 3.2
 
 Create YARRRML rules to convert the person and organization data below into RDF.
 Do not forget to link the people to their organizations through your rules.
