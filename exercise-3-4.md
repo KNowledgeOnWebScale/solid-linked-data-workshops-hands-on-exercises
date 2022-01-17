@@ -15,3 +15,4 @@ All tasks are using a single resource at <http://localhost:8080>`.
      - JSON-LD
      - HTML
 3. What responses did you get and why?
+You can look into the server code if needed.
