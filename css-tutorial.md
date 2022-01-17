@@ -249,7 +249,7 @@ WAC uses Access Control List (ACL) resources to determine what is allowed.
 In general, these resources have an `.acl` extension,
 but you can always find the corresponding ACL in the response header when GETting a resource.
 The ACL resource that determines access to the root container is `http://localhost:3000/.acl`.
-This means that we can find our root ACL resource by looking for the `.data/.acl` file.
+This means that we can find our root ACL resource by looking for the `../.data/.acl` file.
 This file has the following contents:
 
 ```turtle
