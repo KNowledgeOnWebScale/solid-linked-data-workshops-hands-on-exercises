@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@vocab": "http://xmlns.com/foaf/0.1/",
+    "member": {"@reverse": "http://xmlns.com/foaf/0.1/member" }
+  },
+  "@id": "https://new-u.tech/gwen/#me",
+  "@type": "Person",
+  "givenName": "Gwendolyne",
+  "familyName": "Stacy",
+  "nick": "Gwen",
+  "mbox": {"@id":"mailto:gwen@new-u.tech"},
+  "homepage": {"@id":"https://new-u.tech/gwen"},
+  "img": {"@type": "Image", "@id": "https://static.wikia.nocookie.net/marveldatabase/images/e/e7/Symbiote_Spider-Man_Vol_1_1_Artgerm_Virgin_Variant.jpg/revision/latest/scale-to-width-down/856?cb=20190125221031"},
+  "member": {
+    "@type": "Organization",
+    "name": "New U Technologies",
+    "homepage": {"@id":"https://new-u.tech"}
+  }
+}

@@ -13,6 +13,8 @@ You find each exercise in a dedicated markdown file:
 - [Exercise 3.1](exercise-3-1.md)
 - [Exercise 3.2](exercise-3-2.md)
 - [Exercise 3.3](exercise-3-3.md)
+- [Exercise 3.4](exercise-3-4.md)
+- [Exercise 3.5](exercise-3-5.md)
 
 Additionally, you find a tutorial for the Community Solid Server at [css-tutorial.md](css-tutorial.md).
 

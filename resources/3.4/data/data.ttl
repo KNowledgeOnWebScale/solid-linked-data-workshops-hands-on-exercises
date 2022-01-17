@@ -1,0 +1,17 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<https://new-u.tech/gwen/#me>
+    a               foaf:Person ;
+    foaf:familyName "Stacy" ;
+    foaf:givenName  "Gwendolyne" ;
+    foaf:homepage   <https://new-u.tech/gwen> ;
+    foaf:img        <https://static.wikia.nocookie.net/marveldatabase/images/e/e7/Symbiote_Spider-Man_Vol_1_1_Artgerm_Virgin_Variant.jpg/revision/latest/scale-to-width-down/856?cb=20190125221031> ;
+    foaf:mbox       <mailto:gwen@new-u.tech> ;
+    foaf:nick       "Gwen" .
+
+[
+  a foaf:Organization ;
+  foaf:homepage <https://new-u.tech> ;
+  foaf:name "New U Technologies";
+  foaf:member <https://new-u.tech/gwen/#me>
+] .
