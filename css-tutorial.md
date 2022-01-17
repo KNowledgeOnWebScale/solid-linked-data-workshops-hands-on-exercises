@@ -133,7 +133,7 @@ curl -v -X POST -H "Slug: custom" -H "Content-Type: text/plain" -d "abc" http://
 Location: http://localhost:3000/custom
 ```
 
-You can see this resource at http://localhost:3000/customName.
+You can see this resource at http://localhost:3000/custom.
 Note that the Slug header is a suggestion,
 servers are not required to use it.
 
@@ -249,7 +249,7 @@ WAC uses Access Control List (ACL) resources to determine what is allowed.
 In general, these resources have an `.acl` extension,
 but you can always find the corresponding ACL in the response header when GETting a resource.
 The ACL resource that determines access to the root container is `http://localhost:3000/.acl`.
-This means that we can find our root ACL resource by looking for the `.data/.acl` file.
+This means that we can find our root ACL resource by looking for the `../.data/.acl` file.
 This file has the following contents:
 
 ```turtle
