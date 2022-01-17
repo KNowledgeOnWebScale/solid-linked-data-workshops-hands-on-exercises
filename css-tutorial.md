@@ -133,7 +133,7 @@ curl -v -X POST -H "Slug: custom" -H "Content-Type: text/plain" -d "abc" http://
 Location: http://localhost:3000/custom
 ```
 
-You can see this resource at http://localhost:3000/customName.
+You can see this resource at http://localhost:3000/custom.
 Note that the Slug header is a suggestion,
 servers are not required to use it.
 
