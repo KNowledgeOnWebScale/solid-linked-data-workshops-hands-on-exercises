@@ -15,7 +15,7 @@ You should use the following vocabularies:
 
 | Name              | Prefix        | Url                                     | Interesting properties         |
 |-------------------|---------------|-----------------------------------------|--------------------------------|
- | DBpedia           | `dbpedia-owl` | <http://dbpedia.org/ontology/>          | dbpedia-owl:birthPlace`        |
+ | DBpedia           | `dbpedia-owl` | <http://dbpedia.org/ontology/>          | `dbpedia-owl:birthPlace`       |
 | RDF Schema        | `rdfs`        | <http://www.w3.org/2000/01/rdf-schema#> | `rdfs:label`                   |
  | Schema.org        | `schema`      | <http://schema.org/>                    | `schema:sameAs`, `schema:name` |
 | FOAF              | `foaf`        | <http://xmlns.com/foaf/0.1/>            | `foaf:name`                    |
