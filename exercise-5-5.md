@@ -1,4 +1,4 @@
-# Exercise 6.1
+# Exercise 5.5
 
 [Shape Expressions](http://shex.io/shex-primer/) (ShEx) is a language for describing RDF graph structures. 
 A ShEx schema prescribes conditions that RDF data graphs must meet in order to be considered conformant.
