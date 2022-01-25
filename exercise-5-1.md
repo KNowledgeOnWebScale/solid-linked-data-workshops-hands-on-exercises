@@ -1,8 +1,10 @@
 # Exercise 5.1
 
-TODO ++++ what and why of SHACL
+[SHACL](https://www.w3.org/TR/shacl/) Shapes Constraint Language is 
+a language for validating RDF graphs against a set of conditions.
+These conditions are provided as shapes, which as also an RDF graph.
 
-Starting from the below [SHACL](https://www.w3.org/TR/shacl/) shape,
+Starting from the below SHACL shape,
 add property shapes for the following predicates
 - `foaf:familyName` (required)
 - `foaf:img` (required)
@@ -10,6 +12,7 @@ add property shapes for the following predicates
 - `foaf:nick` (optional)
 - `foaf:homepage` (optional)
 
+Thus, you ignore organizations for now.
 Use your solution of exercise 1.1 as input data for the validation.
 
 Tip: try out your SHACL shapes via <https://shacl.org/playground/> 
