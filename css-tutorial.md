@@ -56,7 +56,7 @@ we work directly from the source in this tutorial.
 You do this by cloning the server from the git repository and installing it:
 
 ```shell
-git clone git@github.com:solid/community-server.git
+git clone https://github.com/solid/community-server.git
 cd community-server
 npm install
 ```
@@ -329,7 +329,7 @@ The de facto solution for authenticating with a Solid server is the
 [solid-client-authn](https://github.com/inrupt/solid-client-authn-js) library.
 Start by cloning and installing that library in the tutorial folder:
 ```shell
-git clone git@github.com:inrupt/solid-client-authn-js.git
+git clone https://github.com/inrupt/solid-client-authn-js.git
 cd solid-client-authn-js
 npm install
 ```
