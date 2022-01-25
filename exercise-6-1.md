@@ -12,7 +12,7 @@ They also have differences, such as:
 - ShEx separates validation language and triggering mechanism, while in SHACL target declarations can be part of shapes graph.
 - ShEx designed with focus on human-readability, while SHACL design is focused on RDF vocabulary.
 
-**Task:** Recreate your SHACL shapes of exercise 5.3 in ShEx schema,
+**Task:** Recreate your SHACL shapes of exercise 5.3 in a ShEx schema,
 starting from the schema below.
 
 ```
