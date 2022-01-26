@@ -6,8 +6,9 @@ on [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page).
 
 You can execute SPARQL queries on the Wikidata dataset in the browser via <https://query.wikidata.org/>.
 
-Wiki page for Yoda: <https://www.wikidata.org/wiki/Q51730>
-Resource for Yoda: <http://www.wikidata.org/entity/Q51730>
+Information about Yoda
+- Wiki page: <https://www.wikidata.org/wiki/Q51730>
+- Resource: <http://www.wikidata.org/entity/Q51730>
 
 Tip: the following query selects all predicates and corresponding objects that are directly related to Yoda.
 
