@@ -1,8 +1,17 @@
 # Hands-on exercises of Solid and Linked Data workshops
 
 This repository contains the hands-on exercises of our Solid and Linked Data workshops.
-You find each exercise in a dedicated markdown file:
+You find each exercise in a dedicated markdown file.
 
+**Table of contents**
+- [Creating JSON-LD and Turtle](#creating-json-ld-and-turtle)
+- [Using the RDF/JS data model](#using-the-rdfjs-data-model)
+- [Generating RDF with RML.io](#generating-rdf-with-rmlio)
+- [Using content negotiation](#using-content-negotiation)
+- [Querying RDF with SPARQL](#querying-rdf-with-sparql)
+- [Data validation with SHACL and ShEx](#data-validation-with-shacl-and-shex)
+- [Getting started with the Community Solid Server](#getting-started-with-the-community-solid-server)
+  
 ## Creating JSON-LD and Turtle
 - [Exercise 1.1](exercise-1-1.md)
 - [Exercise 1.2](exercise-1-2.md)
@@ -15,7 +24,7 @@ You find each exercise in a dedicated markdown file:
 - [Exercise 2.2](exercise-2-2.md)
 - [Exercise 2.3](exercise-2-3.md)
 
-## Generating RDF with RML
+## Generating RDF with RML.io
 - [Exercise 3.1](exercise-3-1.md)
 - [Exercise 3.2](exercise-3-2.md)
 - [Exercise 3.3](exercise-3-3.md)
@@ -38,7 +47,6 @@ You find each exercise in a dedicated markdown file:
 - [Exercise 5.5](exercise-5-5.md)
 
 ## Getting started with the Community Solid Server
-
 - [Tutorial](css-tutorial.md).
 
 ## License
