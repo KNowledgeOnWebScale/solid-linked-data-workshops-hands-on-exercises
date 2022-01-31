@@ -49,6 +49,9 @@ You find each exercise in a dedicated markdown file.
 ## Getting started with the Community Solid Server
 - [Tutorial](css-tutorial.md).
 
+## Project
+- [Project description](project.md)
+
 ## License
 This code is copyrighted by [Ghent University – imec](http://idlab.ugent.be/) and 
 released under the [MIT license](http://opensource.org/licenses/MIT).
