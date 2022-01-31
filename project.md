@@ -23,7 +23,7 @@ It has a [JSON API](https://www.themealdb.com/api.php).
 
 You only need to publish the data of the meals that start with the first letter of your name and the last letter of your name.
 For example, if your name is "Luke Skywalker" then you will use the recipes starting with "l" and "r".
-The API has an API method for that: <www.themealdb.com/api/json/v1/1/search.php?f=[letter]> where `[letter]`
+The API has an API method for that: <https://www.themealdb.com/api/json/v1/1/search.php?f=[letter]> where `[letter]`
 is the letter that meals have to start with.
-For example, for Luke Skywalker we have <<www.themealdb.com/api/json/v1/1/search.php?f=l> and
-<<www.themealdb.com/api/json/v1/1/search.php?f=r>.
+For example, for Luke Skywalker we have <https://www.themealdb.com/api/json/v1/1/search.php?f=l> and
+<https://www.themealdb.com/api/json/v1/1/search.php?f=r>.
