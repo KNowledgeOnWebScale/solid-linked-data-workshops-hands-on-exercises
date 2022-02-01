@@ -5,6 +5,8 @@ You will publish meal recipes in RDF, mark your favourite recipes, and query the
 
 ## Tasks
 1. Publish an RDF file online stating your name, IRI, and that you attended these workshops.
+   The workshops are represented by <https://data.knows.idlab.ugent.be/event/solid-linked-data-workshops-2022-01/#>
+   and you can use <http://schema.org/attendee>.
 2. Represent the recipes in RDF. See below for more information about the used data.
    Things that might be helpful: Turtle, JSON-LD, RML.io.
 3. Add some of your favourite recipes to your RDF file of step 1.
