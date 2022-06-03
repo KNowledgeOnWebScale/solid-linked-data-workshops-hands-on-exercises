@@ -160,18 +160,25 @@ PATCH is used to update resources.
 This is useful if you do not want to completely overwrite a resource with a PUT
 and only want to make a smaller change.
 
-Currently, the only supported PATCH format in CSS (and most Solid servers)
-is [SPARQL UPDATE](https://www.w3.org/TR/sparql11-update/) which can only be used on RDF resources.
-Fortunately we created an RDF resource in the previous step that we can now update.
+All Solid servers are required to support [N3 Patch](https://solid.github.io/specification/protocol#n3-patch)
+to modify RDF resources. 
+The following request modified the resource we created in the previous step.
+```shell
+curl -X PATCH -H "Content-Type: text/n3" --data-raw "@prefix solid: <http://www.w3.org/ns/solid/terms#>. _:rename a solid:InsertDeletePatch; solid:inserts { <ex:s3> <ex:p3> <ex:o3>. }." http://localhost:3000/a/b/c
+```
+
+The above command will append the triple `<ex:s3> <ex:p3> <ex:o3>.` to the RDF resource,
+which can be verified by GETting http://localhost:3000/a/b/c.
+
+While not officially in the Solid spec,
+CSS also supports [SPARQL UPDATE](https://www.w3.org/TR/sparql11-update/) for PATCH requests, 
+as do many other Solid servers.
+
+The following request does the same as the N3 Patch request above.
 
 ```shell
 curl -X PATCH -H "Content-Type: application/sparql-update" -d "INSERT DATA { <ex:s3> <ex:p3> <ex:o3> }" http://localhost:3000/a/b/c
 ```
-The above command will append the triple `<ex:s3> <ex:p3> <ex:o3>.` to the RDF resource,
-which can be verified by GETting http://localhost:3000/a/b/c.
-
-[N3 Patch](https://solid.github.io/specification/protocol#n3-patch) was recently added as a requirement
-to the Solid specification so this will be added to CSS in the near future.
 
 #### DELETE a resource
 Finally, DELETE is used to remove resources.
