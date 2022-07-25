@@ -47,7 +47,7 @@ You find each exercise in a dedicated markdown file.
 - [Exercise 5.5](exercise-5-5.md)
 
 ## Getting started with the Community Solid Server
-- [Tutorial](css-tutorial.md).
+- [Tutorial](https://github.com/CommunitySolidServer/tutorials/).
 
 ## Project
 - [Project description](project.md)
