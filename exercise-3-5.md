@@ -20,6 +20,6 @@
    If you can see this, then there are no CORS issues!
    ```
 4. Navigate to <https://google.com> in your browser
-and repeat steps 3 and 4.
+and repeat steps 2 and 3.
 5. You get an error message related to CORS.
 6. Update the code in `server.js` to resolve the issue.
